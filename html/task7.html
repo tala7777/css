@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h1>Images in Tables</h1>
+      <hr />
+      <h4>What are your favourite pets?</h4>
+      <section>
+        <table border="1">
+          <tr>
+            <th><h4>Pet Image</h4></th>
+            <th><h4>More Facts About Pet</h4></th>
+          </tr>
+          <tr>
+            <td><img src="horse.jpg" alt="horse" width="200" /></td>
+            <td><a href="https://thehorse.com/topics/article/">Horses</a></td>
+          </tr>
+          <tr>
+            <td><img src="dog.jpg" alt="dog" width="200" /></td>
+            <td>
+              <a href="https://www.medicalnewstoday.com/articles/322868"
+                >Dogs</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><img src="cat2.jpg" alt="cat" width="200" /></td>
+            <td>
+              <a
+                href="https://www.theguardian.com/lifeandstyle/2021/dec/08/the-inner-lives-of-cats-what-our-feline-friends-really-think-about-hugs-happiness-and-humans"
+                >Cats</a
+              >
+            </td>
+          </tr>
+        </table>
+        <br />
+      </section>
+      <table border="1">
+        <tr>
+          <th colspan="6">Time Table</th>
+        </tr>
+        <tr>
+          <th rowspan="7">Hours</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+        </tr>
+        <tr>
+          <td>math</td>
+          <td>science</td>
+          <td>math</td>
+          <td>science</td>
+          <td>arts</td>
+        </tr>
+        <tr>
+          <td>math</td>
+          <td>science</td>
+          <td>math</td>
+          <td>science</td>
+          <td>arts</td>
+        </tr>
+
+        <tr>
+          <td>math</td>
+          <td>science</td>
+          <td>math</td>
+          <td>science</td>
+          <td>arts</td>
+        </tr>
+        <tr>
+          <th colspan="5">Lunch</th>
+        </tr>
+        <tr>
+          <td>math</td>
+          <td>science</td>
+          <td>math</td>
+          <th rowspan="5" colspan="6">Project</th>
+        </tr>
+        <tr>
+          <td>math</td>
+          <td>science</td>
+          <td>math</td>
+        </tr>
+      </table>
+    </section>
+    <br />
+    <section>
+      <table border="1">
+        <th colspan="2">Language and Framework</th>
+        <tr>
+          <td>Python</td>
+          <td>Django</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Javascripy</td>
+          <td>React.js</td>
+        </tr>
+        <tr>
+          <td>Vue.js</td>
+        </tr>
+        <tr>
+          <td>Ruby</td>
+          <td>Ruby on Rails</td>
+        </tr>
+      </table>
+    </section>
+    <br />
+    <section>
+      <h4>Table Num. 2</h4>
+      <br />
+      <table border="1">
+        <tr>
+          <td rowspan="2">Row 1-2, Col 1</td>
+          <td>Row 1, Col 2</td>
+          <td>Row 1, Col 3</td>
+          <td>Row 1, Col 4</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">Row 2-3, Col 2-3</td>
+          <td>Row 2, Col 4</td>
+        </tr>
+        <tr>
+          <td>Row 3, Col 1</td>
+          <td>Row 3, Col 4</td>
+        </tr>
+        <tr>
+          <td>Row 4, Col 1</td>
+          <td>Row 4, Col 2</td>
+          <td colspan="2">Row 4, Col 3-4</td>
+        </tr>
+      </table>
+    </section>
+    <br />
+    <section>
+        <p><h4>TABLE USING COLSPAN, ROWSPAN</h4></p>
+      <table border="1"width="500">
+        <tr>
+          <th rowspan="9">A</th>
+          <th rowspan="8">B</th>
+          <th rowspan="7">C</th>
+          <th rowspan="6">D</th>
+          <th rowspan="5">E</th>
+          <th rowspan="4">F</th>
+          <th colspan="2">AH</th>
+          <th rowspan="4">H</th>
+          <th rowspan="5">I</th>
+          <th rowspan="6">J</th>
+          <th rowspan="7">K</th>
+          <th rowspan="8">L</th>
+          <th rowspan="10">M</th>
+        </tr>
+        <tr>
+          <th colspan="2">G</th>
+        </tr>
+        <tr>
+          <th colspan="2">GH</th>
+        </tr>
+        <tr>
+          <th colspan="2">N</th>
+        </tr>
+        <tr>
+          <th colspan="4">O</th>
+        </tr>
+        <tr>
+          <th colspan="6">P</th>
+        </tr>
+        <tr>
+          <th colspan="8">Q</th>
+        </tr>
+        <tr>
+          <th colspan="2">R</th>
+          <th>S</th>
+          <th>T</th>
+          <th colspan="2">U</th>
+          <th>V</th>
+          <th>W</th>
+          <th colspan="2">X</th>
+        </tr>
+        <tr>
+            <th colspan="12">Y</th>
+        </tr>
+        <tr>
+          <th colspan="2">Z</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th colspan="2">5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+        </tr>
+      </table>
+    </section>
+    <section> 
+        <p >
+  <h4 align="center">Time Table </h4>
+</p>
+         <table border="4" align="center" height="400" width="800">
+        <tr align="center" valign="middle">
+          <th>Day/Period</th>
+          <th>I<br>9:30-10:20</th>
+          <th>II<br>10:20-11:10</th>
+          <th>III<br>11:10-12:00</th>
+          <th>12:00-12:40</th>
+          <th>IV<br>12:40-1:30</th>
+          <th>V<br>1:30-2:20</th>
+          <th>VI<br>2:20-3:10</th>
+          <th>VII<br>3:10-4:00</th>
+        </tr>
+        <tr align="center" valign="middle"></tralign>
+          <th>Monday</th>
+          <td>Eng</td>
+          <td>Mat</td>
+          <td>Vhe</td>
+          <th rowspan="6"> L<br>u<br>n<br>c<br>h<br></th>
+          <td colspan="3">LAB</td>
+          <td>Phy</td>
+        </tr>
+        <tr align="center" valign="middle"></tralign>
+          <th>Tuesday</th>
+          <td colspan="3">LAB</td>
+          <td>Eng</td>
+          <td>Che</td>
+          <td>Mat</td>
+          <td>Sports</td>
+        </tr>
+         <tr align="center" valign="middle"></tralign>
+          <th>Wednsday</th>
+          <td>Mat</td>
+          <td>phy</td>
+          <td>Eng</td>
+          <td>Che</td>
+          <td colspan="3">Library</td>
+        </tr>
+        <tr align="center" valign="middle"></tralign>
+          <th>Thursday</th>
+          <td>Phy</td>
+          <td>Eng</td>
+          <td>Che</td>
+          <td colspan="3">LAB</td>
+          <td>Mat</td>
+        </tr>
+        <tr align="center" valign="middle"></tralign>
+          <th>Friday</th>
+          <td colspan="3">LAB</td>
+          <td>Mat</td>
+          <td>Che</td>
+          <td>Eng</td>
+          <td>Phy</td>
+        </tr>
+         <tr align="center" valign="middle"></tralign>
+          <th>Monday</th>
+          <td>Eng</td>
+          <td>Che</td>
+          <td>Mat</td>
+          <td colspan="3">SEMINAR</td>
+          <td>Sports</td>
+          </table>  </section>
+         </body>
+</html>

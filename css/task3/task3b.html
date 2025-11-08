@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Login</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #a100ff, #6100ff);
+      }
+
+      .login-container {
+        background-color: white;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        padding: 40px;
+        width: 700px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-image {
+        background-color: rgb(241, 241, 241);
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      }
+
+      .login-image img {
+        width: 128px;
+        height: auto;
+      }
+
+      .login-form {
+        flex: 1;
+        text-align: center;
+      }
+
+      .login-form h2 {
+        margin-bottom: 20px;
+      }
+
+      .login-form input {
+        width: 80%;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        text-align: center;
+        align-content: baseline;
+      }
+
+      .login-form button {
+        width: 80%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #00cc44;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .login-form a {
+        color: #00cc44;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .login-form p {
+        font-size: 13px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-image">
+        <img src="rsc/laptop.png" alt="Laptop Icon" />
+      </div>
+
+      <div class="login-form" style="margin-left:120px; width:250px;">
+        <h2>Member Login</h2>
+        <form>
+         <input type="text" placeholder="✉️ Email" required style="text-align:left; color:#555; "/><br>
+<input type="password" placeholder="🔒 Password" required style="text-align:left; color:#555;"/>
+          <button type="submit">LOGIN</button>
+          <p>Forgot<a href="#"> Username / Password?</a></p>
+          <br />
+          <a href="#">Create your account →</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
