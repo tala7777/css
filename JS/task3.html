@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3</title>
+</head>
+<body>
+  <h1>Pi Equation</h1>
+  <div id="output"></div>
+
+  <script>
+    const pi = Math.PI;
+    const radius = 5;
+    const area = pi * radius * radius;
+
+    console.log(area);
+    document.getElementById("output").innerHTML =
+      `Radius: ${radius} <br> Area using π: ${area.toFixed(2)}`;
+  </script>
+</body>
+</html>

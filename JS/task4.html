@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4/title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    const x = parseFloat(prompt("Enter value for x:"));
+    const y = parseFloat(prompt("Enter value for y:"));
+    let message = x > y ? "Hello World" : "Goodbye";
+
+    alert(message);
+    console.log(message);
+    document.getElementById("output").innerHTML = message;
+  </script>
+</body>
+</html>
