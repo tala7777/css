@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tala Shkokani - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Dark Mode-->
 
     <!-- Google Font -->
     <link
@@ -16,600 +18,345 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <style>
-      :root {
-        --arch: #dce7ff;
-        --accent: #ffa6c9;
-        --primary: #517bce;
-        --secondary: #aec8ff;
-        --highlight: #ffd1e0;
-        --text: #2b3652;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #f2f5ff;
-        color: var(--text);
-        scroll-behavior: smooth;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 100px 0;
-      }
-
-      /* Navbar */
-      .nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        background: var(--arch);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-      .nav ul {
-        display: flex;
-        gap: 32px;
-        list-style: none;
-      }
-      .nav a {
-        font-size: 1.2rem;
-        color: #5a6c92;
-        transition: 0.25s;
-      }
-      .nav a:hover {
-        color: var(--accent);
-        transform: translateY(-2px);
-      }
-
-      /* Hero Section */
-      .hero-arch {
-        position: relative;
-        background: linear-gradient(135deg, var(--arch) 0%, var(--accent) 100%);
-        padding: 120px 40px 180px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-        border-bottom-left-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
-        overflow: hidden;
-      }
-      .hero-arch::before,
-      .hero-arch::after,
-      .hero-arch .circle1,
-      .hero-arch .circle2 {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.25;
-        z-index: 0;
-      }
-      .hero-arch::before {
-        width: 200px;
-        height: 200px;
-        background: var(--accent);
-        top: -50px;
-        left: -50px;
-      }
-      .hero-arch::after {
-        width: 300px;
-        height: 300px;
-        background: var(--primary);
-        bottom: -100px;
-        right: -100px;
-      }
-      .hero-arch .circle1 {
-        width: 100px;
-        height: 100px;
-        background: var(--highlight);
-        top: 80px;
-        right: 20%;
-        animation: float 6s ease-in-out infinite;
-      }
-      .hero-arch .circle2 {
-        width: 120px;
-        height: 120px;
-        background: var(--secondary);
-        bottom: 50px;
-        left: 15%;
-        animation: float 8s ease-in-out infinite alternate;
-      }
-      .hero-arch img {
-        background: transparent;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        box-shadow: 0 10px 30px #00000025;
-        order: 2;
-        animation: float 4s ease-in-out infinite;
-        z-index: 1;
-      }
-      .hero-text {
-        max-width: 500px;
-        order: 1;
-        background: #ffffffb3;
-        padding: 25px 35px;
-        border-radius: 25px;
-        box-shadow: 0 15px 30px #0000001a;
-        text-align: center;
-        z-index: 1;
-      }
-      .hero-text h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        background: linear-gradient(
-          90deg,
-          var(--primary),
-          var(--accent),
-          var(--primary)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 200%;
-        animation: gradientMove 5s linear infinite;
-      }
-      .hero-text p {
-        font-size: 1.25rem;
-        color: #4a4a6a;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
-      }
-      @keyframes gradientMove {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      /* Sections */
-      section {
-        margin-bottom: 140px;
-        position: relative;
-        padding: 60px 0;
-      }
-      section::before {
-        content: "";
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        opacity: 0.15;
-        z-index: 0;
-      }
-      #objective::before {
-        background: var(--highlight);
-        top: -50px;
-        left: -40px;
-      }
-      #education::before {
-        background: var(--secondary);
-        bottom: -50px;
-        right: -30px;
-      }
-      #skills::before {
-        background: var(--accent);
-        top: -40px;
-        right: -20px;
-      }
-      #projects::before {
-        background: var(--primary);
-        bottom: -60px;
-        left: -50px;
-      }
-      #experience::before {
-        background: var(--highlight);
-        top: -60px;
-        right: -60px;
-      }
-
-      section h2 {
-        color: var(--primary);
-        font-size: 2rem;
-        margin-bottom: 40px;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-      }
-      section h2::after {
-        content: "";
-        width: 50px;
-        height: 3px;
-        background: #c8c2ff;
-        margin: 10px auto 0;
-        display: block;
-        border-radius: 4px;
-      }
-
-      #objective {
-        background: #fff;
-        border-radius: 50px;
-        padding: 80px 60px;
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        box-shadow: 0 15px 40px #0000001a;
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Cards / Skills / Projects */
-      .card,
-      .skill-card,
-      .exp-item,
-      .project-card {
-        position: relative;
-        z-index: 1;
-      }
-      .card {
-        background: #fff;
-        border-radius: 25px;
-        padding: 25px;
-        box-shadow: 0 12px 35px #0000001a;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: 0.3s;
-        margin-bottom: 20px;
-        min-height: 140px;
-      }
-      .card i {
-        color: var(--primary);
-      }
-
-      /* Skills */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(
-          auto-fit,
-          150px
-        ); /* fixed width for all cards */
-        gap: 30px;
-        justify-content: center;
-        align-items: stretch;
-      }
-      .skill-card {
-        width: 150px;
-        height: 150px;
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: #fff;
-        border-radius: 25px;
-        box-shadow: 0 12px 35px #0000001a;
-        transition: transform 0.3s;
-      }
-      .skill-card:hover {
-        transform: translateY(-4px);
-      }
-      .skill-card i {
-        font-size: 2.5rem;
-        color: var(--primary);
-      }
-      .skill-card span {
-        margin-top: 8px;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-
-      /* Projects */
-      .grid-bento {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        grid-auto-rows: 220px;
-        gap: 40px;
-      }
-      .project-card {
-        border-radius: 25px;
-        overflow: hidden;
-        box-shadow: 0 12px 40px #0000001a;
-        transition: 0.4s;
-      }
-      .project-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .project-card .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #ffffff55;
-        backdrop-filter: blur(3px);
-        opacity: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s;
-      }
-      .project-card:hover .overlay {
-        opacity: 1;
-      }
-
-      /* Experience */
-      .exp-item {
-        display: flex;
-        gap: 18px;
-        padding: 25px;
-        border-radius: 25px;
-        box-shadow: 0 12px 40px #0000001a;
-        transition: 0.3s;
-        background: #fff;
-      }
-      .exp-item:hover {
-        transform: translateX(6px);
-        box-shadow: 0 20px 45px #00000022;
-      }
-      .exp-item i {
-        color: var(--primary);
-        font-size: 2rem;
-      }
-
-      /* Footer */
-      footer {
-        background: #6f95e2;
-        color: #fff;
-        text-align: center;
-        padding: 50px 20px;
-        position: relative;
-      }
-      footer a {
-        color: var(--accent);
-        font-size: 1.5rem;
-        margin: 0 10px;
-        transition: 0.3s;
-      }
-      footer a:hover {
-        color: #f2f5ff;
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .hero-arch {
-          flex-direction: column;
-          gap: 30px;
-          padding-bottom: 200px;
-        }
-        .hero-arch img {
-          order: -1;
-        }
-      }
-      @media (max-width: 768px) {
-        .skills-grid {
-          grid-template-columns: repeat(auto-fit, 120px);
-          gap: 20px;
-        }
-        .skill-card {
-          width: 120px;
-          height: 120px;
-        }
-        .skill-card i {
-          font-size: 2rem;
-        }
-        .skill-card span {
-          font-size: 0.9rem;
-        }
-      }
-      @media (max-width: 480px) {
-        .skills-grid {
-          grid-template-columns: repeat(auto-fit, 100px);
-          gap: 15px;
-        }
-        .skill-card {
-          width: 100px;
-          height: 100px;
-        }
-        .skill-card i {
-          font-size: 1.8rem;
-        }
-        .skill-card span {
-          font-size: 0.8rem;
-        }
-        .hero-text h1 {
-          font-size: 2rem;
-        }
-        .hero-text p {
-          font-size: 1rem;
-        }
-      }
-    </style>
   </head>
   <body>
-    <nav class="nav">
-      <ul>
-        <li>
-          <a href="#header"><i class="fa-solid fa-house"></i></a>
-        </li>
-        <li>
-          <a href="#objective"><i class="fa-solid fa-bullseye"></i></a>
-        </li>
-        <li>
-          <a href="#projects"><i class="fa-solid fa-laptop-code"></i></a>
-        </li>
-        <li>
-          <a href="#experience"><i class="fa-solid fa-briefcase"></i></a>
-        </li>
-        <li>
-          <a href="#footer"><i class="fa-solid fa-envelope"></i></a>
-        </li>
-      </ul>
-    </nav>
+    <input type="checkbox" id="dark-mode-toggle" />
+    <div class="page-wrapper">
+      <!-- Sidebar Navigation -->
 
-    <header id="header" class="hero-arch">
-      <div class="hero-text">
-        <h1>Tala Shkokani</h1>
-        <p>Web Developer</p>
-      </div>
-      <img src="src/talaaa-5png.png" alt="photo" />
-      <div class="circle1"></div>
-      <div class="circle2"></div>
-    </header>
+      <nav class="nav">
+        <ul>
+          <label class="dark-toggle" for="dark-mode-toggle">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </label>
 
-    <div class="container">
-      <!-- Objective -->
-      <section id="objective">
-        <h2>Objective</h2>
+          <li>
+            <a href="#header"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="#objective"><i class="fa-solid fa-bullseye"></i></a>
+          </li>
+          <li>
+            <a href="#education"><i class="fa-solid fa-briefcase"></i></a>
+          </li>
+          <li>
+            <a href="#projects"><i class="fa-solid fa-laptop-code"></i></a>
+          </li>
+          <li>
+            <a href="#footer"><i class="fa-solid fa-envelope"></i></a>
+          </li>
+        </ul>
+
+        <span class="sidebar-name">Tala</span>
+      </nav>
+      <!-- Hero Section -->
+      <header id="header" class="hero-arch">
+        <section class="hero-text">
+          <h1 class="title-rotate">
+            <span class="css-type"></span>
+          </h1>
+
+          <p class="description">
+            Passionate about crafting wellness based, user-focused mobile and
+            web applications using web and UI/UX design principles.
+          </p>
+          <a href="src/Tala Shkokani.pdf" class="cv-button" target="_blank"
+            >Download CV</a
+          >
+        </section>
+        <img src="src/talafinal.png" alt="Tala Shkokani" />
+        <span class="circle1"></span>
+        <span class="circle2"></span>
+      </header>
+
+      <!-- Main Content -->
+      <main class="container">
+        <!-- Objective -->
+        <section id="objective">
+          <h2>Objective</h2>
+          <article class="objective-card">
+            <img
+              src="src/dart.jpg"
+              alt="Objective Image"
+              class="objective-img"
+            />
+            <p>
+              I am a developer who strives to build new health and wellness
+              applications and continually enhance existing ones. My goal is to
+              create digital tools that empower users to improve their
+              lifestyle, maintain better health, track their personal progress,
+              stay motivated, and ultimately make their entire wellness journey
+              smarter and more accessible. My philosophy centers around crafting
+              intuitive, easy-to-use designs supported by clean, responsive user
+              interfaces. I believe that technology should adapt to people—not
+              the other way around. Because of that, I focus heavily on
+              user-centered solutions that feel natural, supportive, and
+              meaningful. Whether it is guiding users through healthy habits,
+              helping them set achievable goals, or making complex health
+              insights simple to understand, my mission is to design experiences
+              that genuinely add value to their daily lives. My work blends
+              thoughtful design, modern development practices, and a deep
+              commitment to improving how people interact with their own
+              well-being.
+            </p>
+          </article>
+        </section>
+        <!-- EDUCATION -->
+        <section>
+          <h2>Education</h2>
+          <div class="timeline">
+            <!-- CIS DEGREE -->
+            <article class="timeline-item">
+              <div class="timeline-content">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <header>
+                  <h3>B.Sc Computer Info Systems</h3>
+                  <time datetime="2020-2024">2020 - 2024</time>
+                </header>
+                <p>
+                  Studied core computing fundamentals, databases, systems
+                  analysis, and software development while building multiple
+                  academic tech projects.
+                </p>
+              </div>
+            </article>
+
+            <!-- RPA (REPLACING FLUTTER) -->
+            <article class="timeline-item">
+              <div class="timeline-content">
+                <i class="fa-solid fa-robot"></i>
+                <header>
+                  <h3>Robotic Process Automation (RPA) - SDS</h3>
+                  <time datetime="2024">2024</time>
+                </header>
+                <p>
+                  Trained in automation workflows, bot creation, and process
+                  optimization using robotic process automation tools.
+                </p>
+              </div>
+            </article>
+
+            <!-- UX/UI -->
+            <article class="timeline-item">
+              <div class="timeline-content">
+                <i class="fa-solid fa-pen-ruler"></i>
+                <header>
+                  <h3>UX/UI Design - The Hope</h3>
+                  <time datetime="2022">2022</time>
+                </header>
+                <p>
+                  Trained in user-centered design, wireframing, prototyping, and
+                  delivering clean, accessible UI layouts.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- EXPERIENCE -->
+          <h2>Work Experience</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-content">
+                <i class="fa-solid fa-code"></i>
+                <header>
+                  <h3>Mobile App Developer</h3>
+                  <time datetime="2022-2024">2022 - 2024</time>
+                </header>
+                <p>
+                  Developed student projects and mobile apps focused on clean
+                  UI/UX, functionality, and performance.
+                </p>
+              </div>
+            </article>
+
+            <!-- 🔄 REPLACED RPA CARD WITH DOT JORDAN CARD -->
+            <article class="timeline-item">
+              <div class="timeline-content">
+                <i class="fa-solid fa-mobile"></i>
+                <header>
+                  <h3>Flutter Developer - DOT Jordan</h3>
+                  <time datetime="2022-2023">2022 - 2023</time>
+                </header>
+                <p>
+                  Built and shipped 3 production Flutter apps used by 10,000+
+                  users Integrated REST APIs, Firebase Auth, and local
+                  notifications Reduced app size by 35% and improved cold start
+                  time by 2.1s Implemented clean architecture + Riverpod state
+                  management
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-content">
+                <i class="fa-solid fa-building-columns"></i>
+                <header>
+                  <h3>Orange Coding School - Intern</h3>
+                  <time datetime="2025-current">2025 - Current</time>
+                </header>
+                <p>
+                  Currently contributing to real client projects under senior
+                  mentorship Writing production-grade Dart/Flutter code with
+                  code reviews Collaborating via Git, Agile workflows, and daily
+                  standups
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="skills-wrapper">
+          <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+              <!-- Skill 1 -->
+              <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <span>HTML</span>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS</span>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="skill-card">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="skill-card">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+              </div>
+
+              <!-- Skill 5 -->
+              <div class="skill-card">
+                <i class="fab fa-mobile"></i>
+                <span>Flutter</span>
+              </div>
+
+              <!-- Skill 6 -->
+              <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <span>SQL</span>
+              </div>
+            </div>
+          </section>
+          <section id="skills-soft" class="skills-section">
+            <h2>Soft Skills</h2>
+
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="fa-solid fa-comments"></i>
+                <span>Communication</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Problem Solving</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-users-rays"></i>
+                <span>Teamwork</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-brain"></i>
+                <span>Critical Thinking</span>
+              </div>
+              <div class="skill-card">
+                <i class="fa-solid fa-language"></i>
+                <span>English</span>
+              </div>
+              <div class="skill-card">
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <span>Presentation</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Projects -->
+        <section id="projects">
+          <h2>Projects</h2>
+          <div class="projects-wrapper">
+            <!-- Sign-In Cards -->
+            <article class="project-card">
+              <a href="https://github.com/tala7777/ocs" target="_blank">
+                <div class="project-img-container">
+                  <img src="src/signin.jpeg" alt="Sign-In Cards" />
+                  <div class="overlay">
+                    <i class="fa-solid fa-id-card"></i>
+                    <h3>Sign-In Cards</h3>
+                    <p>HTML & CSS - Responsive sign-in UI design</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Zaweya UI -->
+            <article class="project-card">
+              <a
+                href="https://www.figma.com/design/Qoc8UR3TnqGdvyW9jV27yf/Zawiya?t=3tJI7Q8X55i5LWdU-0"
+                target="_blank"
+              >
+                <div class="project-img-container">
+                  <img src="src/zawiya.jpeg" alt="Zaweya UI" />
+                  <div class="overlay">
+                    <i class="fa-solid fa-pencil-ruler"></i>
+                    <h3>Zawiya UI</h3>
+                    <p>UX/UI Design - Interactive prototyping</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- First Aid App -->
+            <article class="project-card">
+              <a href="https://github.com/tala7777/ocs" target="_blank">
+                <div class="project-img-container">
+                  <img src="src/sports.png" alt="sports" />
+                  <div class="overlay">
+                    <i class="fa-solid fa-briefcase-medical"></i>
+                    <h3>Health Freak</h3>
+                    <p>Bootstrap Based - Real-time guidance</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer id="footer">
         <p>
-          Passionate about crafting elegant, user-focused mobile and web
-          applications using Flutter and UI/UX design principles. My goal is to
-          deliver intuitive, visually appealing, and highly functional apps that
-          make an impact.
+          Contact:
+          <a href="mailto:shkokanitala1@gmail.com" target="_blank"
+            ><i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a href="https://github.com/tala7777" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://linkedin.com/in/tala-shkokani" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://wa.me/+962787232383" target="_blank"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <br />
+          © 2025 Tala Shkokani
+          <p class="updated">Last updated: November 2025</p>
+
         </p>
-      </section>
-
-      <!-- Education -->
-      <section id="education">
-        <h2>Education</h2>
-        <div class="card">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <h3>B.Sc Computer Info Systems</h3>
-          <p>University of Jordan</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-mobile"></i>
-          <h3>Flutter Development</h3>
-          <p>DOT Jordan</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-pen-ruler"></i>
-          <h3>UX/UI Design</h3>
-          <p>The Hope</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-robot"></i>
-          <h3>RPA</h3>
-          <p>SDS</p>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <i class="fab fa-html5"></i><span>HTML</span>
-          </div>
-          <div class="skill-card">
-            <i class="fab fa-css3-alt"></i><span>CSS</span>
-          </div>
-          <div class="skill-card">
-            <i class="fab fa-js"></i><span>JavaScript</span>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-code"></i><span>Dart</span>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-mobile"></i><span>Flutter</span>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-paintbrush"></i><span>UI/UX</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid-bento">
-          <div class="project-card">
-            <img src="src/signin.jpeg" alt="Sign-In Cards" />
-            <div class="overlay">
-              <i class="fa-solid fa-id-card"></i>
-              <h3>Sign-In Cards</h3>
-              <p>HTML & CSS</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <img src="src/zawiya.jpeg" alt="Zaweya UI" />
-            <div class="overlay">
-              <i class="fa-solid fa-pencil-ruler"></i>
-              <h3>Zaweya UI</h3>
-              <p>UX/UI Design</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <img src="src/firstaid.jpeg" alt="First Aid App" />
-            <div class="overlay">
-              <i class="fa-solid fa-briefcase-medical"></i>
-              <h3>First Aid App</h3>
-              <p>Flutter App</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="grid-bento">
-          <div class="exp-item">
-            <i class="fa-solid fa-code"></i>
-            <div>
-              <h3>Mobile Apps Developer</h3>
-              <p>
-                Built student apps focused on clean UI/UX and accessibility.
-              </p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <i class="fa-solid fa-users"></i>
-            <div>
-              <h3>IEEE Volunteer Coordinator</h3>
-              <p>Organized tech events, leading student volunteer teams.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </footer>
     </div>
-
-    <!-- Footer -->
-    <footer id="footer">
-      <p>
-        Contact:
-        <a href="mailto:shkokanitala1@gmail.com">shkokanitala1@gmail.com</a>
-      </p>
-      <p>
-        <a href="https://github.com/tala7777"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/tala-shkokani"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-      </p>
-      <p>© 2025 Tala Shkokani</p>
-    </footer>
   </body>
 </html>

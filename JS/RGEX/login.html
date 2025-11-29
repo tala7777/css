@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- if inside a folder called js -->
+    <script src="coditions.js" defer></script>
+
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="signup-box">
+      <h2>Sign Up</h2>
+
+      <form>
+        <!-- Name fields -->
+        <div class="name-fields">
+          <div class="field-group">
+            <input
+              id="fname"
+              type="text"
+              placeholder="First Name"
+              oninput="checkName(this, 'fname-error')"
+              autocomplete="given-name"
+              required
+            />
+            <small id="fname-error"></small>
+          </div>
+
+          <div class="field-group">
+            <input
+              id="lname"
+              type="text"
+              placeholder="Last Name"
+              oninput="checkName(this, 'lname-error')"
+              autocomplete="family-name"
+              required
+            />
+            <small id="lname-error"></small>
+          </div>
+        </div>
+
+        <input
+          id="birthdate"
+          type="date"
+          oninput="checkBirthdate()"
+          autocomplete="bday"
+          required
+        />
+        <small id="birthdate-error"></small>
+        <div>
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            autocomplete="email"
+            oninput="checkEmail(this, 'email-error')"
+            required
+          />
+          <small id="email-error"></small>
+        </div>
+
+        <div>
+          <input
+            id="confirm-email"
+            type="email"
+            placeholder="Confirm Email"
+            autocomplete="off"
+            oninput="emailConf(this, 'email-error')"
+            required
+          />
+          <small id="emailconf-error"></small>
+        </div>
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          oninput="checkPass(this, 'pass-error')"
+          autocomplete="new-password"
+          required
+        />
+        <small id="pass-error"></small>
+        <input
+          id="confirm-password"
+          type="password"
+          placeholder="Confirm Password"
+          oninput="passConf(this, 'passconf-error')"
+          required
+        />
+        <small id="passconf-error"></small>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="077XXXXXXXX"
+          autocomplete="tel"
+          oninput="checkPhone()"
+        />
+        <small id="phone-error"></small>
+
+        <label>
+          <input id="terms" type="checkbox" required /> I accept the Terms of
+          Use & Privacy Policy
+        </label>
+
+        <button type="submit">Sign Up</button>
+
+        <p>Already have an account? <a href="#">Login here</a></p>
+        <small>Copyright © YourCompany.com</small>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  background-color: #d8d2ff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* SIGN-UP BOX */
+.signup-box {
+  background-color: #8e85ff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.signup-box h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.signup-box input[type="date"],
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"],
+.signup-box input[type="tel"]
+ {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* NAME FIELDS SIDE BY SIDE */
+.name-fields {
+  display: flex;
+  gap: 30px;
+}
+
+/* Group for input + error message */
+.field-group {
+  width: 100%;
+}
+
+/* LABEL */
+.signup-box label {
+  color: white;
+  font-size: 12px;
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+
+/* BUTTON */
+.signup-box button {
+  background-color: #66666b;
+  color: rgb(36, 34, 34);
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  width: 80%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-box button:hover {
+  background-color: #55555a;
+}
+
+/* BASIC TEXT */
+.signup-box p,
+.signup-box small {
+  color: white;
+  font-size: 12px;
+}
+
+/* LINKS */
+.signup-box a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ERROR MESSAGE TEXT */
+.field-group small {
+  color: #ffdddd;
+  font-size: 11px;
+  text-align: left;
+  display: block;
+  margin-top: -4px;
+}
+.invalid {
+  border: 1px solid red;
+}
